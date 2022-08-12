@@ -4,7 +4,6 @@ import Page from "./basePage";
  * sub page containing specific selectors and methods for a specific page
  */
 class CoinHouseHomePageHome extends Page {
-
   /**
    * open the coin house home page
    */
@@ -76,7 +75,6 @@ class CoinHouseHomePageHome extends Page {
     await this.cryptoSavingsAccountSubMenu.click();
   }
 
-
   async getSubTitlesCoinHouseHomePage(): Promise<string[]> {
     const textArray: string[] = [];
     const textElems = await this.subTitles;
@@ -84,7 +82,10 @@ class CoinHouseHomePageHome extends Page {
       await text.waitForExist({ timeout: 5000 });
       const linkText = await text.getText();
       await textArray.push(linkText);
-      console.log("this is the text array of all coin house sub sections", textArray);
+      console.log(
+        "this is the text array of all coin house sub sections",
+        textArray
+      );
     }
     return textArray;
   }
@@ -98,8 +99,6 @@ class CoinHouseHomePageHome extends Page {
     });
     await this.assetManagementSubMenu.click();
   }
-
-
 }
 
 export default new CoinHouseHomePageHome();
