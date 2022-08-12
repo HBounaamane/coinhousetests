@@ -54,11 +54,11 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-        './features/**/*.feature'
+        './features/**/*.feature',
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        './features/**/loanRepayment.feature'
     ],
     //
     // ============
