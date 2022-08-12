@@ -51,6 +51,17 @@ Feature: loan repayment status
       When the repaid amount is inferior to loan amount
       Then the repayment status is displayed in bleu
 
+    Example: For existing portfolio loans with a start date in the past
+      Given the investment banker opens a current portfolio loan
+      When the repaid amount is inferior to loan amount
+      Then the repayment status is displayed in bleu
+
+    Example: For existing portfolio loans with a start date in the past with endDate=today
+      Given the investment banker opens a current portfolio loan
+      When the repaid amount is equal to loan amount
+      Then the repayment status is displayed in bleu
+      And the repayment status equal to 100%
+
     Rule : Expired loans with a complete repaid amount should be 100%
 
     Example:
