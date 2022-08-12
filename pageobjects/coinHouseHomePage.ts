@@ -91,8 +91,9 @@ class CoinHouseHomePageHome extends Page {
   }
 
   public async openAssetManagementPage() {
-    await this.investmentMenu.waitForDisplayed({ timeout: 1000 });
+    await this.investmentMenu.waitForDisplayed({ timeout: 2000 });
     await this.investmentMenu.moveTo();
+    await this.investmentMenu.click();
     await this.assetManagementSubMenu.waitForDisplayed({
       timeout: 2000,
       timeoutMsg: "The asset management subMenu is not displayed !!!",
