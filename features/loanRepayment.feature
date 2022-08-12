@@ -34,31 +34,35 @@ Feature: loan repayment status
       Then the repaid status should be <repaid Status>
 
       Examples:
-        |client Name|loan Amount|start Date|end Date|margin|repaid Amount|repaid Status|
-        |PayTeam|2M€|01/01/2021|02/01/2024|1,2%|0,2|9,88%|
-        |MagicLand|67,5M€|01/01/2020|30/08/2022|0,45%|66,9|98,67 %|
-        |HappyHour|6000€|01/06/2022|01/02/2023|0,9%|0|0%|
+        | client Name | loan Amount | start Date |  end Date  | margin  | repaid Amount | repaid Status |
+        |  PayTeam    | 2M€         | 01/01/2021 | 02/01/2024 | 1,2%    | 0,2           |  9,88%        |
+        |  MagicLand  | 67,5M€      | 01/01/2020 | 30/08/2022 | 0,45%   | 66,9          |  98,67 %      |
+        |  HappyHour  | 6000€       | 01/06/2022 | 01/02/2023 | 0,9%    |  0            |   0%          |
 
   Rule : for current loans, the repaid status should be displayed in bleu
 
     Example: the investment banker create a loan with a start date in the past
       Given the investment banker creates a new loan
       When the repaid amount is equal to zero
+      And   endDate > Today
       Then the repayment status is with bleu color
 
     Example: For existing portfolio loans with a start date in the past
       Given the investment banker opens a current portfolio loan
       When the repaid amount is inferior to loan amount
+      And  endDate > Today
       Then the repayment status is displayed in bleu
 
     Example: For existing portfolio loans with a start date in the past
       Given the investment banker opens a current portfolio loan
       When the repaid amount is inferior to loan amount
+      And  endDate > Today
       Then the repayment status is displayed in bleu
 
     Example: For existing portfolio loans with a start date in the past with endDate=today
       Given the investment banker opens a current portfolio loan
       When the repaid amount is equal to loan amount
+      And  endDate = Today
       Then the repayment status is displayed in bleu
       And the repayment status equal to 100%
 
@@ -74,4 +78,5 @@ Feature: loan repayment status
     Example:
       Given John open the expired client's portfolio loans
       When the repaid amount is not equal to the loan amount
+      And  endDate < today
       Then the repayment status is displayed with the percentage in red color
