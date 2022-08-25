@@ -20,7 +20,7 @@ class BookingPage extends Page {
   }
 
   get chosenDate() {
-    return $('h5[class="Heading-o3jnd-0 H5-sc-1ip600u-0 bwJnmE m-bottom-0"]');
+    return $('h5[class="Heading-sc-1v2rf31-0 H5-qlxr19-0 eMMzKx m-bottom-0"]');
   }
   get firstName() {
     return $('input[name="firstName"]');
@@ -43,7 +43,7 @@ class BookingPage extends Page {
 
   get bookingMessage() {
     return $(
-      'h2[class="Heading-o3jnd-0 H2-oefoer-0 eTMEiB headline m-top-4 m-bottom-0 m-x-1 overflow-y-auto success-header"]'
+      'h2[class="Heading-sc-1v2rf31-0 H2-hlnl3b-0 OxGpS headline m-top-4 m-bottom-0 m-x-1 overflow-y-auto success-header"]'
     );
   }
   /**

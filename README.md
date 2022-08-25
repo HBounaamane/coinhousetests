@@ -1,7 +1,7 @@
 # WebdriverIO with Cucumber E2E Tests
 <p align="center">
     <a href="https://github.com/HBounaamane/coinhousetests/actions/workflows/ci.yaml">
-        <img alt="Build Status" src="https://github.com/HBounaamane/coinhousetests/actions/workflows/ci.yaml/badge.svg">
+        <img alt="Build Status" src="https://github.com/HBounaamane/coinhousetests/actions/workflows/ci.yaml/badge.svg?branch=feat%2Fadd-coinHouse-tests">
     </a>
 </p>
 

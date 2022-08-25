@@ -10,7 +10,7 @@ export const coinHouseSectionsTitle = [
 ];
 
 export const cryptoSavingAccountPageTitle = "The new Savings Accounts.";
-export const bookingDate = "Friday, 12 August 2022 12:45";
+export const bookingDate = "Friday, 12 August 2022 17:30";
 export const bookingMessage = "Meeting time requested";
 
 export function userData(): User {

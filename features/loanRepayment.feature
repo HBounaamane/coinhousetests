@@ -12,16 +12,16 @@ Feature: loan repayment status
       Given the investment banker creates a new loan
       When the loan start date is in the future
       Then the repayment status is "not started"
-      And the "not started" color is red
+      And the "not started" color is grey
 
     Example: For existing portfolio loans with a start date in the future
       Given the investment banker opens a current portfolio loan
       When the loan start date is in the future
       Then the repayment status is "not started"
-      And the "not started" color is red
+      And the "not started" color is grey
 
 
-  Rule : for current loans, the repaid status should be calculated in percentage
+  Rule : for current loans, the repaid status should be calculated in percentage using the formula (LoanAmount/LoandAmount(1+margin))
 
     Scenario Outline: current loans
 
@@ -66,7 +66,7 @@ Feature: loan repayment status
       Then the repayment status is displayed in bleu
       And the repayment status equal to 100%
 
-    Rule : Expired loans with a complete repaid amount should be 100%
+  Rule : Expired loans with a complete repaid amount should be 100%
 
     Example:
       Given John open the expired client's portfolio loan
